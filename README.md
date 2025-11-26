@@ -31,3 +31,14 @@ A 1-day technical conference informational site built with Flask.
 - `templates/index.html`: Main HTML template.
 - `static/style.css`: CSS styles.
 - `static/script.js`: JavaScript for search functionality.
+
+## Deployment to Render
+
+This application is ready for deployment on [Render](https://render.com/).
+
+1.  Create a new **Web Service** on Render.
+2.  Connect your repository.
+3.  Render will automatically detect the `requirements.txt` and `Procfile`.
+4.  **Build Command**: `pip install -r requirements.txt`
+5.  **Start Command**: `gunicorn app:app`
+
