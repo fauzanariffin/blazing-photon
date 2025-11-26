@@ -1,0 +1,231 @@
+:root {
+    --primary-color: #4285F4; /* Google Blue */
+    --secondary-color: #EA4335; /* Google Red */
+    --accent-yellow: #FBBC05; /* Google Yellow */
+    --accent-green: #34A853; /* Google Green */
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --text-color: #202124;
+    --text-secondary: #5f6368;
+    --border-color: #dadce0;
+    --font-family: 'Google Sans', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background-color: var(--card-bg);
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 40px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.conference-info h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.date-location {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+}
+
+.description {
+    max-width: 600px;
+    color: var(--text-secondary);
+}
+
+/* Search */
+.search-section {
+    margin-bottom: 40px;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: var(--font-family);
+    transition: box-shadow 0.2s;
+}
+
+#searchInput:focus {
+    outline: none;
+    box-shadow: 0 1px 6px rgba(32,33,36,0.28);
+    border-color: transparent;
+}
+
+/* Schedule */
+.schedule-section h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.event-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    gap: 30px;
+    box-shadow: 0 1px 2px rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+    transition: transform 0.2s;
+}
+
+.event-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 1px 3px rgba(60,64,67,0.3), 0 4px 8px 3px rgba(60,64,67,0.15);
+}
+
+.time-col {
+    min-width: 120px;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.details-col {
+    flex: 1;
+}
+
+.tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    font-size: 0.8rem;
+    padding: 4px 12px;
+    border-radius: 16px;
+    background-color: #e8f0fe;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.tag.break {
+    background-color: #fce8e6;
+    color: var(--secondary-color);
+}
+
+.tag.keynote {
+    background-color: #fef7e0;
+    color: #f9ab00; /* Darker yellow for text */
+}
+
+.event-title {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+.event-desc {
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    font-size: 0.95rem;
+}
+
+.speakers {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.speaker {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--text-color);
+    background: #f1f3f4;
+    padding: 6px 12px;
+    border-radius: 20px;
+    transition: background 0.2s;
+}
+
+.speaker:hover {
+    background: #e8eaed;
+}
+
+.avatar {
+    width: 28px;
+    height: 28px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#noResults {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* Footer */
+footer {
+    margin-top: 60px;
+    padding: 40px 0;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .event-card {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .time-col {
+        min-width: auto;
+        border-bottom: 1px solid #f1f3f4;
+        padding-bottom: 10px;
+    }
+}
